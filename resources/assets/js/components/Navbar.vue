@@ -1,0 +1,139 @@
+<template>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
+        <!-- {{ appName }} -->
+        <img :src="public_path+'/images/logo_brand.png'">
+      </router-link>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false">
+        <span class="navbar-toggler-icon"/>
+      </button>
+
+      <div id="navbarToggler" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <locale-dropdown/>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <!-- Authenticated -->
+                    <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">messages</i>
+                  <p class="d-lg-none d-md-block">
+                    Stats
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
+                  <a class="dropdown-item" href="#">Another One</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <li v-if="user" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark"
+               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img :src="user.photo" class="rounded-circle profile-photo mr-1">
+              {{ user.first_name + " " + user.last_name}}
+            </a>
+            <div class="dropdown-menu">
+              <router-link :to="{ name: 'user.profile' }" class="dropdown-item pl-3">
+                <fa icon="user" fixed-width/>
+                Profile
+              </router-link>
+              <router-link :to="{ name: 'settings.profile' }" class="dropdown-item pl-3">
+                <fa icon="cog" fixed-width/>
+                {{ $t('settings') }}
+              </router-link>
+              <router-link :to="{ name: 'user.companies' }" class="dropdown-item pl-3">
+                <i class="fa fa-building" style="padding: 0 3px;"></i> Companies
+              </router-link>
+              <div class="dropdown-divider"/>
+              <a href="#" class="dropdown-item pl-3" @click.prevent="logout">
+                <fa icon="sign-out-alt" fixed-width/>
+                {{ $t('logout') }}
+              </a>
+            </div>
+          </li>
+          <!-- Guest -->
+          <template v-else>
+            <li class="nav-item">
+              <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
+                {{ $t('login') }}
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'register' }" class="nav-link" active-class="active">
+                {{ $t('register') }}
+              </router-link>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import LocaleDropdown from './LocaleDropdown'
+
+export default {
+  components: {
+    LocaleDropdown
+  },
+
+  data: () => ({
+    appName: window.config.appName,
+    public_path: location.origin
+  }),
+
+  computed: mapGetters({
+    user: 'auth/user'
+  }),
+
+  methods: {
+    async logout () {
+      // Log out the user.
+      await this.$store.dispatch('auth/logout')
+
+      // Redirect to login.
+      this.$router.push({ name: 'login' })
+    }
+  }
+}
+</script>
+
+<style scoped>
+.profile-photo {
+  width: 2rem;
+  height: 2rem;
+  margin: -.375rem 0;
+}
+</style>
