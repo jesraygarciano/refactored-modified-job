@@ -10,11 +10,12 @@ class WorkExperience extends Model
 
     public function getLengthAttribute(){
         $from = strtotime($this->attributes['from']);
-        $to = strtotime($this->attributes['to']);
+        $to = $this->attributes['to'] ? strtotime($this->attributes['to']) : time();
 
         $year = gmdate('Y', $to - $from);
         $month = gmdate('m', $to - $from);
+        $days = gmdate('d', $to - $from);
 
-        return ($year > 0 ? $year.' year(s)' : '').' '.($month > 0 ? $month.' month(s)':'');
+        return ($to - $from > 31557600 ? $year.' year(s) ' : '').($month > 0 ? (int)$month.' month(s) ':'');
     }
 }
