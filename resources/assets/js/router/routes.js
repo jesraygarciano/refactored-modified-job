@@ -16,13 +16,13 @@ const Settings = () => import('~/pages/settings/index').then(m => m.default || m
 const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.default || m)
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
 
-
 const OpeningDisplay = () => import('~/pages/opening/show').then(m => m.default || m)
 
+const applicantResume = () => import('~/pages/dashboard/resume').then(m => m.default || m)
+
 export default [
-  
   { path: '/', name: 'welcome', component: Welcome },
-  
+
   // Opening Display
   { path: '/opening/show', name: 'opening.show', component: OpeningDisplay },
 
@@ -51,6 +51,9 @@ export default [
   // opening routes
   { path: '/opening/profile/:id', name: 'opening.profile', component: OpeningProfile },
   { path: '/company/:company_id/opening/create', name: 'opening.create', component: OpeningCreate },
-  { path: '*', component: NotFound }
+  { path: '*', component: NotFound },
+
+  // Dashboard routes
+  { path: '/dashboard/resume', name: 'dashboard.resume', component: applicantResume }
 
 ]

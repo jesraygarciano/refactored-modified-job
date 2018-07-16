@@ -10,7 +10,7 @@
               <router-link :to="{ name: 'welcome' }">
                 <img :src="public_path+'/images/logo_brand.png'">
               </router-link>
-              <blockquote style="font-size:12px; margin-top:10px;">Welcome back! Please login to your account.</blockquote>
+              <blockquote style="margin-top:10px;">Welcome back! Please login to your account.</blockquote>
             </div>
             <v-line-input :form="form" field="email">
               Email

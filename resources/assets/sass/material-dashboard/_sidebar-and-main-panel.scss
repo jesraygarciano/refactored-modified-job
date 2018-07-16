@@ -1,11 +1,12 @@
 .wrapper{
     position: relative;
-    top: 0;
+    // top: 0;
+    bottom: 60px;
     height: 100vh;
 }
 
 .sidebar {
-    position: fixed;
+    position: absolute; //fixed
     top: 70px;
     bottom: 0;
     left: 0;
