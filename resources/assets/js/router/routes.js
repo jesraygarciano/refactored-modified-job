@@ -19,6 +19,9 @@ const SettingsPassword = () => import('~/pages/settings/password').then(m => m.d
 const OpeningDisplay = () => import('~/pages/opening/show').then(m => m.default || m)
 
 const applicantResume = () => import('~/pages/dashboard/resume').then(m => m.default || m)
+const applicantAppliedList = () => import('~/pages/dashboard/appliedList').then(m => m.default || m)
+const applicantBookmarkList = () => import('~/pages/dashboard/bookmarkList').then(m => m.default || m)
+const applicantFollowedCompanies = () => import('~/pages/dashboard/followedCompanies').then(m => m.default || m)
 
 export default [
   { path: '/', name: 'welcome', component: Welcome },
@@ -54,6 +57,10 @@ export default [
   { path: '*', component: NotFound },
 
   // Dashboard routes
-  { path: '/dashboard/resume', name: 'dashboard.resume', component: applicantResume }
+  { path: '/dashboard/resume', name: 'dashboard.resume', component: applicantResume },
+  { path: '/dashboard/applied-list', name: 'dashboard.appliedList', component: applicantAppliedList },
+  { path: '/dashboard/bookmark-list', name: 'dashboard.bookmarkList', component: applicantBookmarkList },
+  { path: '/dashboard/follow-company', name: 'dashboard.followedCompanies', component: applicantFollowedCompanies },
+  { path: '/dashboard/follow-company', name: 'dashboard.followedCompanies', component: applicantFollowedCompanies }
 
 ]
