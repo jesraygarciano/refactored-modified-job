@@ -28,7 +28,10 @@ $config = [
 
       'programming_languages' => \App\ProgrammingLanguage::all(),
 
-      'technologies' => \App\Technology::all()
+      'technologies' => \App\Technology::all(),
+      
+      'provinces' => \DB::table('provinces')->get(),
+      'author' => 'Hinimo ni nako. Umar ni.',
 ];
 
 $polyfills = [
@@ -54,7 +57,10 @@ $polyfills = [
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+
+  {{-- Vuetify --}}
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -69,20 +75,11 @@ $polyfills = [
   {{-- Load the application scripts --}}
   @if (app()->isLocal())
     <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ asset('js/material-dashboard.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/plugins/bootstrap-notify.js')}}"></script>
-    <script src="{{ asset('js/plugins/chartist.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
   @else
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-    
-    <script src="{{ asset('js/material-dashboard.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/plugins/bootstrap-notify.js')}}"></script>
-    <script src="{{ asset('js/plugins/chartist.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
- 
+    <script src="https://unpkg.com/vue-ckeditor2"></script>
   @endif
 </body>
 </html>
