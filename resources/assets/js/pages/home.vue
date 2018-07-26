@@ -1,641 +1,449 @@
 <template>
-  <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" fixed clipped class="grey lighten-4" app>
+      <v-list dense class="grey lighten-4">
+          <!-- <span class="align-center">
+            <img :src="public_path + '/images/logo_brand.png'" alt="Jobseed LOGO">
+          </span> -->
+        <template v-for="(item, i) in items">
+          <v-layout v-if="item.heading" :key="i" row align-center>
+            <v-flex xs6>
+              <v-subheader v-if="item.heading">
+                {{ item.heading }}
+              </v-subheader>
+            </v-flex>
+            <v-flex xs6 class="text-xs-right">
+              <v-btn small flat>edit</v-btn>
+            </v-flex>
+          </v-layout>
+          <v-divider v-else-if="item.divider" :key="i" dark class="my-3"></v-divider>
+          <v-list-tile v-else :key="i" @click="">
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title class="grey--text">
+                {{ item.text }}
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar color="amber" app fixed clipped-left>
+      <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
+      <span class="title ml-3 mr-5">
+          <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
+            <img :src="public_path + '/images/logo_brand.png'" alt="Jobseed LOGO">
+          </router-link>
+        <!-- <span class="text">dashboard</span> -->
+      </span>
+      <!-- <v-text-field
+        solo-inverted
+        flat
+        hide-details
+        label="Search"
+        prepend-inner-icon="search"
+      ></v-text-field> -->
+      <v-spacer></v-spacer>
 
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active ">
-            <router-link :to="{ name: 'home' }" class="nav-link">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </router-link>
-          </li>
-          <li class="nav-item ">
-            <router-link :to="{ name: 'dashboard.resume' }" class="nav-link">
-              <i class="material-icons">person</i>
-              <p>Resume</p>
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link :to="{ name: 'dashboard.appliedList' }" class="nav-link">
-              <i class="material-icons">content_paste</i>
-              <p>Applied Lists</p>
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link :to="{ name: 'dashboard.bookmarkList' }" class="nav-link">
-              <i class="material-icons">library_books</i>
-              <p>Bookmark lists</p>
-            </router-link>
-          </li>
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li> -->
-          <li class="nav-item ">
-            <router-link :to="{ name: 'dashboard.followedCompanies' }" class="nav-link">
-              <i class="material-icons">location_ons</i>
-              <p>Followed Companies</p>
-            </router-link>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Scouted Notifications</p>
-            </a>
-          </li>
-          <!-- <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li> -->
-        </ul>
-      </div>
-    </div>
 
-    <div class="main-panel">
-      <!-- Navbar -->
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
+
+      <v-btn icon>
+        <v-icon>notifications</v-icon>
+      </v-btn>
+
+    </v-toolbar>
+    <v-content>
+      <v-container fluid fill-height class="grey lighten-4">
+        <v-layout justify-center align-center>
+          <!-- <v-flex shrink>
+            <v-tooltip right>
+              <v-btn
+                slot="activator"
+                :href="source"
+                icon
+                large
+                target="_blank"
+              >
+                <v-icon large>code</v-icon>
+              </v-btn>
+              <span>Source</span>
+            </v-tooltip>
+            <v-tooltip right>
+              <v-btn slot="activator" icon large href="https://codepen.io/johnjleider/pen/jZQNbd" target="_blank">
+                <v-icon large>mdi-codepen</v-icon>
+              </v-btn>
+              <span>Codepen</span>
+            </v-tooltip>
+          </v-flex> -->
+          <div class="content">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-globe text-warning"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Job available</p>
+                          <p class="card-title">112
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p class="card-category">Applied Lists</p>
-                  <h3 class="card-title">5/50
-                    <!-- <small>Openings</small> -->
-                  </h3>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-refresh"></i> Update Now
+                    </div>
+                  </div>
                 </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">Get More Space...</a>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-money-coins text-success"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Jobs Applied</p>
+                          <p class="card-title">7
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-calendar-o"></i> Last day
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-vector text-danger"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Employer chat</p>
+                          <p class="card-title">23
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-clock-o"></i> In the last hour
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-favourite-28 text-primary"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-category">Scouted by</p>
+                          <p class="card-title">+45K</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-refresh"></i> Update now
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">store</i>
+            <div class="row">
+              <div class="col-md-5">
+
+                <div class="card card-user">
+                  <div class="image">
+                    <img :src="public_path + '/images/damir-bosnjak.jpg'" alt="User dashboard cover photo">
                   </div>
-                  <p class="card-category">Bookmarked Jobs</p>
-                  <h3 class="card-title">3/20</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                  <div class="card-body">
+                    <div class="author">
+                      <a href="#">
+                        <img class="avatar border-gray" :src="public_path + '/images/mike.png'" alt="...">
+                        <h5 class="title">Jason Tatum</h5>
+                      </a>
+                      <p class="description">
+                        Web developer
+                      </p>
+                    </div>
+                    <p class="description text-center">
+                      "Passionate in
+                      <br> Laravel, Webpack, NPMs
+                      <br> NodeJS is my forte"
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <hr>
+                    <div class="button-container">
+                      <div class="row">
+                        <div class="col-lg-3 col-md-6 col-6 ml-auto">
+                          <h5>12
+                            <br>
+                            <small>Applied</small>
+                          </h5>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
+                          <h5>5
+                            <br>
+                            <small> Scouted</small>
+                          </h5>
+                        </div>
+                        <div class="col-lg-3 mr-auto">
+                          <h5>17
+                            <br>
+                            <small>Companies</small>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Followed Companies</p>
-                  <h3 class="card-title">75</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-industry"></i>
-                  </div>
-                  <p class="card-category">Companies scouted you</p>
-                  <h3 class="card-title">+11</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart" id="dailySalesChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
-                  <p class="card-category">
-                    <span class="text-success">
-                      <i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="websiteViewsChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Email Subscriptions</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Completed Tasks</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-tabs card-header-primary">
-                  <div class="nav-tabs-navigation">
-                    <div class="nav-tabs-wrapper">
-                      <span class="nav-tabs-title">Tasks:</span>
-                      <ul class="nav nav-tabs" data-tabs="tabs">
-                        <li class="nav-item">
-                          <a class="nav-link active" href="#profile" data-toggle="tab">
-                            <i class="material-icons">bug_report</i> Bugs
-                            <div class="ripple-container"></div>
-                          </a>
+              <div class="col-md-7">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title">Employers conversation</h4>
+                    </div>
+                    <div class="card-body">
+                      <ul class="list-unstyled team-members">
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-2">
+                              <div class="avatar">
+                                <img :src="public_path + '/images/faces/ayo-ogunseinde-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              DJ Khaled
+                              <br />
+                              <span class="text-muted">
+                                <small>Offline</small>
+                              </span>
+                            </div>
+                            <div class="col-md-3 col-3 text-right">
+                              <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
+                            </div>
+                          </div>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#messages" data-toggle="tab">
-                            <i class="material-icons">code</i> Website
-                            <div class="ripple-container"></div>
-                          </a>
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-2">
+                              <div class="avatar">
+                                <img :src="public_path + '/images/faces/joe-gardner-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-7">
+                              Creative Tim
+                              <br />
+                              <span class="text-success">
+                                <small>Available</small>
+                              </span>
+                            </div>
+                            <div class="col-md-3 col-3 text-right">
+                              <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
+                            </div>
+                          </div>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#settings" data-toggle="tab">
-                            <i class="material-icons">cloud</i> Server
-                            <div class="ripple-container"></div>
-                          </a>
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2 col-2">
+                              <div class="avatar">
+                                <img :src="public_path + '/images/faces/clem-onojeghuo-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                              </div>
+                            </div>
+                            <div class="col-ms-7 col-7">
+                              Flume
+                              <br />
+                              <span class="text-danger">
+                                <small>Busy</small>
+                              </span>
+                            </div>
+                            <div class="col-md-3 col-3 text-right">
+                              <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
+                            </div>
+                          </div>
                         </li>
                       </ul>
                     </div>
                   </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card ">
+                  <div class="card-header ">
+                    <h5 class="card-title">Email Statistics</h5>
+                    <p class="card-category">Last Campaign Performance</p>
+                  </div>
+                  <div class="card-body ">
+                    <canvas id="chartEmail"></canvas>
+                  </div>
+                  <div class="card-footer ">
+                    <div class="legend">
+                      <i class="fa fa-circle text-primary"></i> Opened
+                      <i class="fa fa-circle text-warning"></i> Read
+                      <i class="fa fa-circle text-danger"></i> Deleted
+                      <i class="fa fa-circle text-gray"></i> Unopened
+                    </div>
+                    <hr>
+                    <div class="stats">
+                      <i class="fa fa-calendar"></i> Number of emails sent
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="profile">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept
-                              through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+              </div>
+              <div class="col-md-8">
+                <div class="card card-chart">
+                  <div class="card-header">
+                    <h5 class="card-title">NASDAQ: AAPL</h5>
+                    <p class="card-category">Line Chart with Points</p>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="speedChart" width="400" height="100"></canvas>
+                  </div>
+                  <div class="card-footer">
+                    <div class="chart-legend">
+                      <i class="fa fa-circle text-info"></i> Tesla Model S
+                      <i class="fa fa-circle text-warning"></i> BMW 5 Series
                     </div>
-                    <div class="tab-pane" id="messages">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept
-                              through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="tab-pane" id="settings">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept
-                              through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <hr/>
+                    <div class="card-stats">
+                      <i class="fa fa-check"></i> Data information certified
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Footer -->
-      <footer class="page-footer font-small mdb-color pt-4">
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
+        </v-layout>
 
-          <!-- Footer links -->
-          <div class="row text-center text-md-left mt-3 pb-3">
 
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Nexseed Inc.</h6>
-              <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit.</p>
-            </div>
-            <!-- Grid column -->
-
-            <hr class="w-100 clearfix d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">About Us</h6>
-              <p>
-                <a href="#!">Contact</a>
-              </p>
-              <p>
-                <a href="#!">Terms and Conditions</a>
-              </p>
-              <p>
-                <a href="#!">BrandFlow</a>
-              </p>
-              <p>
-                <a href="#!">Bootstrap Angular</a>
-              </p>
-            </div>
-            <!-- Grid column -->
-
-            <hr class="w-100 clearfix d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-              <p>
-                <a href="#!">Your Account</a>
-              </p>
-              <p>
-                <a href="#!">Become an Affiliate</a>
-              </p>
-              <p>
-                <a href="#!">Shipping Rates</a>
-              </p>
-              <p>
-                <a href="#!">Help</a>
-              </p>
-            </div>
-
-            <!-- Grid column -->
-            <hr class="w-100 clearfix d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-              <p>
-                <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
-              <p>
-                <i class="fa fa-envelope mr-3"></i> info@gmail.com</p>
-              <p>
-                <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-              <p>
-                <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-            </div>
-            <!-- Grid column -->
-
-          </div>
-          <!-- Footer links -->
-
-          <hr>
-
-          <!-- Grid row -->
-          <div class="row d-flex align-items-center">
-
-            <!-- Grid column -->
-            <div class="col-md-7 col-lg-8">
-
-              <!--Copyright-->
-              <p class="text-center text-md-left">© 2018 Copyright:
-                <a href="https://mdbootstrap.com/bootstrap-tutorial/">
-                  <strong> MDBootstrap.com</strong>
-                </a>
-              </p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-5 col-lg-4 ml-lg-0">
-
-              <!-- Social buttons -->
-              <div class="text-center text-md-right">
-                <ul class="list-unstyled list-inline">
-                  <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i class="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i class="fa fa-google-plus"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i class="fa fa-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-            <!-- Grid column -->
-
-          </div>
-          <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
-
-      </footer>
-      <!-- Footer -->
-
-    </div>
-  </div>  
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
+    layout: "welcome",
     middleware: 'auth',
-
-    data: () => ({
-      public_path: location.origin,
-
-    }),
 
     metaInfo() {
       return {
         title: this.$t('home')
       }
+    },
+    data: () => ({
+      public_path: location.origin,
+      drawer: null,
+      items: [{
+          icon: 'lightbulb_outline',
+          text: 'My profile'
+        },
+        {
+          icon: 'touch_app',
+          text: 'See resume'
+        },
+        {
+          divider: true
+        },
+        {
+          heading: 'Labels'
+        },
+        {
+          icon: 'add',
+          text: 'Applied lists'
+        },
+        {
+          divider: true
+        },
+        {
+          icon: 'archive',
+          text: 'Bookmarked lists'
+        },
+        {
+          icon: 'delete',
+          text: 'Followed companies'
+        },
+        {
+          divider: true
+        },
+        {
+          icon: 'settings',
+          text: 'Scouted notifications'
+        },
+        {
+          icon: 'chat_bubble',
+          text: 'Jobseed Chat'
+        },
+        {
+          icon: 'help',
+          text: 'Help'
+        },
+        {
+          icon: 'phonelink',
+          text: 'App downloads'
+        },
+        {
+          icon: 'keyboard',
+          text: 'Keyboard shortcuts'
+        }
+      ]
+    }),
+    props: {
+      source: String
+    },
+      computed: mapGetters({
+    user: 'auth/user'
+  }),
+  methods: {
+    async logout () {
+      // Log out the user.
+      await this.$store.dispatch('auth/logout')
+
+      // Redirect to login.
+      this.$router.push({ name: 'login' })
     }
+  }
   }
 
 </script>

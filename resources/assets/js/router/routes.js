@@ -8,26 +8,21 @@ const NotFound = () => import('~/pages/errors/404').then(m => m.default || m)
 const Home = () => import('~/pages/home').then(m => m.default || m)
 const UserProfile = () => import('~/pages/user/index').then(m => m.default || m)
 const CompanyProfile = () => import('~/pages/company/index').then(m => m.default || m)
+const CompanyHiringApplicants = () => import('~/pages/company/hiringApplicants').then(m => m.default || m)
 const OpeningProfile = () => import('~/pages/opening/index').then(m => m.default || m)
 const UserCompanies = () => import('~/pages/user/companies').then(m => m.default || m)
+const OpeningApply = () => import('~/pages/opening/apply').then(m => m.default || m)
+const HiringApplication = () => import('~/pages/user/hiringApplications').then(m => m.default || m)
 const CompanyCreate = () => import('~/pages/company/create').then(m => m.default || m)
 const OpeningCreate = () => import('~/pages/opening/create').then(m => m.default || m)
 const Settings = () => import('~/pages/settings/index').then(m => m.default || m)
 const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.default || m)
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
+const OpeningList = () => import('~/pages/opening/openingList').then(m => m.default || m)
 
-const OpeningDisplay = () => import('~/pages/opening/show').then(m => m.default || m)
-
-const applicantResume = () => import('~/pages/dashboard/resume').then(m => m.default || m)
-const applicantAppliedList = () => import('~/pages/dashboard/appliedList').then(m => m.default || m)
-const applicantBookmarkList = () => import('~/pages/dashboard/bookmarkList').then(m => m.default || m)
-const applicantFollowedCompanies = () => import('~/pages/dashboard/followedCompanies').then(m => m.default || m)
 
 export default [
   { path: '/', name: 'welcome', component: Welcome },
-
-  // Opening Display
-  { path: '/opening/show', name: 'opening.show', component: OpeningDisplay },
 
   { path: '/login', name: 'login', component: Login },
   { path: '/register', name: 'register', component: Register },
@@ -39,13 +34,14 @@ export default [
     component: Settings,
     children: [
       { path: '', redirect: { name: 'settings.profile' } },
-      { path: 'profiled', name: 'settings.profile', component: SettingsProfile },
+      { path: 'profile', name: 'settings.profile', component: SettingsProfile },
       { path: 'password', name: 'settings.password', component: SettingsPassword }
     ] },
 
   // company routes
   { path: '/company/profile/:id', name: 'company.profile', component: CompanyProfile },
   { path: '/company/create', name: 'company.create', component: CompanyCreate },
+  { path: '/company/:id/hiringapplicants', name: 'company.hiringapplicants', component: CompanyHiringApplicants },
 
   // user routes
   { path: '/profile/:id?', name: 'user.profile', component: UserProfile },
@@ -54,13 +50,11 @@ export default [
   // opening routes
   { path: '/opening/profile/:id', name: 'opening.profile', component: OpeningProfile },
   { path: '/company/:company_id/opening/create', name: 'opening.create', component: OpeningCreate },
-  { path: '*', component: NotFound },
+  { path: '/opening/openinglist', name: 'opening.openinglist', component: OpeningList },
 
-  // Dashboard routes
-  { path: '/dashboard/resume', name: 'dashboard.resume', component: applicantResume },
-  { path: '/dashboard/applied-list', name: 'dashboard.appliedList', component: applicantAppliedList },
-  { path: '/dashboard/bookmark-list', name: 'dashboard.bookmarkList', component: applicantBookmarkList },
-  { path: '/dashboard/follow-company', name: 'dashboard.followedCompanies', component: applicantFollowedCompanies },
-  { path: '/dashboard/follow-company', name: 'dashboard.followedCompanies', component: applicantFollowedCompanies }
+  // application
+  { path: '/applications', name: 'hiringApplication.applications', component: HiringApplication },
+  { path: '/opening/apply/:opening_id/:applicant_id?', name: 'hiringApplication.create', component: OpeningApply },
 
+  { path: '*', component: NotFound }
 ]

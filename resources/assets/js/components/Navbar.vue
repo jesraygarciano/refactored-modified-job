@@ -17,55 +17,31 @@
             <a class="nav-link" href="#">Link</a>
           </li> -->
         </ul>
+
         <ul class="navbar-nav ml-auto">
           <!-- Authenticated -->
-                    <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="material-icons">messages</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <li v-if="user" class="nav-item">
+            <router-link class="nav-link text-dark" :to="{ name: 'user.profile' }">
+              <img :src="user.photo" class="rounded-circle profile-photo mr-1">
+              {{ user.first_name + " " + user.last_name}}
+            </router-link>
+          </li>
+          <li v-if="user" class="nav-item has-num-ico dropdown">
+            <p class="number-icon"><i class="number">1</i></p>
+            <a class="nav-link text-dark"
+               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bell-o" aria-hidden="true"></i>
+            </a>
+          </li>
           <li v-if="user" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-dark"
                href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img :src="user.photo" class="rounded-circle profile-photo mr-1">
-              {{ user.first_name + " " + user.last_name}}
+              <!--  -->
             </a>
-            <div class="dropdown-menu">
-              <router-link :to="{ name: 'user.profile' }" class="dropdown-item pl-3">
+            <div class="dropdown-menu dropdown-menu-right">
+              <router-link :to="{ name: 'hiringApplication.applications' }" class="dropdown-item pl-3">
                 <fa icon="user" fixed-width/>
-                Profile
+                Your Job Applications
               </router-link>
               <router-link :to="{ name: 'settings.profile' }" class="dropdown-item pl-3">
                 <fa icon="cog" fixed-width/>
