@@ -1,5 +1,8 @@
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
+@import url('~quill/dist/quill.core.css');
+@import url('~quill/dist/quill.snow.css');
+@import url('~quill/dist/quill.bubble.css');
 @import '~sweetalert2/src/sweetalert2';
 
 @import 'elements/card';
@@ -10,49 +13,47 @@
 @import 'elements/input';
 @import 'elements/icons';
 @import 'elements/info-preview';
+@import 'elements/hiring-progress-table';
 @import 'elements/photo-viewer';
 @import 'elements/opening-card';
 @import 'elements/table';
 @import 'elements/wizard';
 @import 'elements/icon-button';
 
-
-@import "material-dashboard/variables";
-@import "material-dashboard/mixins";
-//  @import "material-dashboard/core-bootstrap";
-
-// Core Components
-@import "material-dashboard/buttons";
-@import "material-dashboard/checkboxes";
-@import "material-dashboard/radios";
-@import "material-dashboard/forms";
-@import "material-dashboard/input-group";
-@import "material-dashboard/images";
-@import "material-dashboard/navbar";
-@import "material-dashboard/alerts";
-@import "material-dashboard/headers";
-@import "material-dashboard/type";
-@import "material-dashboard/tabs";
-@import "material-dashboard/tooltip";
-@import "material-dashboard/popover";
-@import "material-dashboard/dropdown";
-@import "material-dashboard/togglebutton";
-@import "material-dashboard/ripples";
-@import "material-dashboard/footers";
-@import "material-dashboard/sidebar-and-main-panel";
-@import "material-dashboard/fixed-plugin";
-@import "material-dashboard/tables";
-@import "material-dashboard/misc";
-@import "material-dashboard/social-buttons";
-
-@import "material-dashboard/cards";
-@import "material-dashboard/cards/card-stats";
-@import "material-dashboard/cards/card-profile";
-@import "material-dashboard/cards/card-plain";
-
-//plugin scss
-@import "material-dashboard/plugins/animate";
-@import "material-dashboard/plugins/chartist";
-@import "material-dashboard/plugins/perfect-scrollbar";
-
-@import "material-dashboard/responsive";
+ @import 'paper-dashboard/variables';
+ @import 'paper-dashboard/mixins';
+ 
+ // Plugins CSS
+ @import "paper-dashboard/plugins/plugin-animate-bootstrap-notify";
+ @import "paper-dashboard/plugins/plugin-perfect-scrollbar";
+ 
+ // Core CSS
+ @import "paper-dashboard/buttons";
+ @import "paper-dashboard/inputs";
+ @import "paper-dashboard/typography";
+ @import "paper-dashboard/misc";
+ @import "paper-dashboard/checkboxes-radio";
+ 
+ 
+ // components
+ @import "paper-dashboard/navbar";
+ @import "paper-dashboard/page-header";
+ @import "paper-dashboard/dropdown";
+ @import "paper-dashboard/alerts";
+ @import "paper-dashboard/images";
+ @import "paper-dashboard/nucleo-outline";
+ @import "paper-dashboard/tables";
+ @import "paper-dashboard/sidebar-and-main-panel";
+ @import "paper-dashboard/footers";
+ @import "paper-dashboard/fixed-plugin";
+ 
+ // cards
+ @import "paper-dashboard/cards";
+ @import "paper-dashboard/cards/card-plain";
+ @import "paper-dashboard/cards/card-chart";
+ @import "paper-dashboard/cards/card-user";
+ @import "paper-dashboard/cards/card-map";
+ @import "paper-dashboard/cards/card-stats";
+ 
+ @import "paper-dashboard/responsive";
+ 
