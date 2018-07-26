@@ -6,7 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 mix.config.vue.esModule = true
 
 mix
-  .js('resources/assets/js/app.js', 'public/js')
+  .js(['resources/assets/js/app.js', 'resources/assets/js/paper-dashboard.js'], 'public/js')
   .sass('resources/assets/sass/app.scss', 'public/css')
 
   .sourceMaps()
@@ -30,7 +30,13 @@ if (mix.inProduction()) {
     'sweetalert2',
     'vuex-router-sync',
     '@fortawesome/fontawesome',
-    '@fortawesome/vue-fontawesome'
+    '@fortawesome/vue-fontawesome',
+    'bootstrap-notify',
+    'moment',
+    'nouislider',
+    'bootstrap-switch',
+    'perfect-scrollbar',
+    'chartjs'
   ])
 }
 

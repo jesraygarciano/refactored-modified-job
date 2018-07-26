@@ -23,7 +23,6 @@ class CompanyController extends Controller
             'website_url' => 'required',
         ]);
 
-
         $company = Company::create([
             "name" => $request->name,
             "email" => $request->email,
@@ -50,7 +49,13 @@ class CompanyController extends Controller
      * @return Illuminate\Http\Resources\JsonResource
      */
     public function fetch_datatable(Request $request){
-        return CompanyResource::collection(Company::paginate());
+        $_companies = Company::all();
+        $companies = [];
+        foreach($_companies as $company){
+            $company->hiring_application_count = $company->applications()->count();
+            array_push($companies,$company);
+        }
+        return ["data"=>$companies];
     }
 
     /**
