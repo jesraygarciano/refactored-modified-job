@@ -13,46 +13,68 @@
         </div>
       </div>
     </div>
-    <div class="unick-table">
+    <div class="hiring-progress-table">
       <div class="header">
         <div class="row item-row">
-          <div class="col-md-4 part">
+          <div class="col-md-5 part">
             Applicant
           </div>
-          <div class="col-md-8 part">
+          <div class="col-md-7 part">
             Progress
           </div>
         </div>
       </div>
       <div class="body">
-        <div class="row item-row" v-for="(application, index) in applications" v-bind:key="index">
-          <div class="col-md-4 part">
-            <div class="text-truncate">
-            <router-link class="n" :to="{ name: 'user.profile', params: { id: application.user.id }}">
-              <iconized-photo size="medium-icon" :photo="application.user.photo"></iconized-photo>
-              {{application.user.name}}
+        <div class="row item-row">
+          <div class="col-md-5 part">
+            <router-link class="n" :to="{ name: 'opening.profile', params: { id: 0 }}">
+              <iconized-photo size="medium-icon" :photo="'http://localhost:8000/storage/photos/1_opening_picture_1531894847.png'"></iconized-photo> Uasdasd
             </router-link>
-            : <router-link class="n" :to="{ name: 'opening.profile', params: { id: application.opening.id }}">
-                {{application.opening.title}}
-              </router-link>
-            </div>
-            <div class="p-10">
-              <button type="button" v-on:click="displayApplicationDetail(application)" class="btn btn-primary btn-sm">Start Hiring Procedure</button>
-            </div>
+            : appling for Engineer
           </div>
-          <div class="col-md-8 part progress-line-container">
+          <div class="col-md-7 part progress-line-container">
             <progress-step>
               <template slot="steps">
-                <li class="step" v-for="(step, index) in application.opening.hiring_procedure.hiring_steps" v-bind:key="index">
-                  <div class="circle" data-toggle="tooltip" data-html="true" :title="'<b>'+step.name+'</b><p>'+(step.description ? step.description : '')+'</p>'"></div>
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+                <li class="step">
+                  <div class="circle"></div>
                 </li>
               </template>
             </progress-step>
           </div>
         </div>
-        <div class="row item-row" v-if="applications.length == 0">
-          <div class="col-md-12 p-10 p-r-50 h-d-f-r">
-            <center> Nothing to show </center>
+        <div class="row item-row">
+          <div class="col-md-5 part">
+            <router-link class="n" :to="{ name: 'opening.profile', params: { id: 0 }}">
+              <iconized-photo size="medium-icon" :photo="'http://localhost:8000/storage/photos/1_opening_picture_1531894847.png'"></iconized-photo> Uasdasd
+            </router-link>
+            : appling for Engineer
+          </div>
+          <div class="col-md-7 part progress-line-container">
+            <progress-step>
+              <template slot="steps">
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+                <li class="step">
+                  <div class="circle"></div>
+                </li>
+              </template>
+            </progress-step>
           </div>
         </div>
       </div>
@@ -85,18 +107,16 @@
         </div>
       </div>
     </div>
-    <application-detail ref="application-detail-component"></application-detail>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import ProgressStep from './../../components/ProgressStep'
-import ApplicationDetail from './../../components/application/ApplicationDetail'
+
 import Vue from 'vue'
 [
   ProgressStep,
-  ApplicationDetail,
 ].forEach(Component => {
   Vue.component(Component.name, Component)
 })
@@ -123,7 +143,7 @@ export default {
     public_path: location.origin,
     company_id: null,
     company: {},
-    applications: [],
+    openings: [],
   }),
   methods: {
     fetch_company: async function(){
@@ -134,32 +154,21 @@ export default {
         })
       this.company = data.data;
     },
-    fetch_applications: async function(){
+    fetch_openings: async function(){
       const { data } = await axios({
           method: 'get',
-          url: '/api/company/fetch/hiring/applications',
+          url: '/api/company/fetch/openings',
           params: { company_id: this.company_id }
         })
-      this.applications = data;
-    },
-    setTooltip: function(){
-      console.log(el);
-      // jQuery(el).tooltip();
-    },
-    displayApplicationDetail(data){
-      this.$refs['application-detail-component'].showApplication(data);
+      this.openings = data.openings;
     }
   },
   created: function(){
     this.company_id = this.$route.params.id;
-    this.fetch_applications();
-    this.fetch_company();
-    jQuery(this.$el).find('[data-toggle="tooltip"]').tooltip();
   },
   mounted(){
-    jQuery(function () {
-      jQuery('[data-toggle="tooltip"]').tooltip()
-    })
+    this.fetch_company();
+    this.fetch_openings();
   }
 }
 </script>

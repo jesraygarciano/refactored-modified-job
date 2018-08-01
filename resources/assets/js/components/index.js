@@ -17,7 +17,6 @@ import SkillSelector from './SkillSelector'
 import CompanyCard from './CompanyCard'
 import IconButton from './IconButton'
 import UnickTable from './UnickTable'
-import EntityHeader from './EntityHeader'
 import { HasError, AlertError, AlertSuccess } from 'vform'
 
 var mixins = {
@@ -57,7 +56,6 @@ Vue.mixin(mixins);
   UnickTable,
   Child,
   Button,
-  EntityHeader,
   Checkbox,
   HasError,
   LineInput,

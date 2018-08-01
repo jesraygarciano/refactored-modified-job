@@ -19,7 +19,9 @@
 @import 'elements/table';
 @import 'elements/wizard';
 @import 'elements/icon-button';
-@import 'elements/company-single';
+
+@import 'elements/welcome-page';
+@import 'elements/variables';
 
  @import 'paper-dashboard/variables';
  @import 'paper-dashboard/mixins';
@@ -58,4 +60,3 @@
  
  @import "paper-dashboard/responsive";
  
-@import 'elements/side-popup';
