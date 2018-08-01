@@ -57,10 +57,22 @@ $polyfills = [
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
   {{-- Vuetify --}}
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="{{ asset('css/argon/nucleo.css') }}" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link href="{{ asset('css/argon/argon.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/paper-dashboard.min.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -75,10 +87,14 @@ $polyfills = [
   {{-- Load the application scripts --}}
   @if (app()->isLocal())
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/argon.min.js') }}"></script>
+
   @else
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/argon/argon.min.js') }}"></script>
+
     <script src="https://unpkg.com/vue-ckeditor2"></script>
   @endif
 </body>
