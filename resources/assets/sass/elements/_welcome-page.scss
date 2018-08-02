@@ -1,3 +1,129 @@
+$box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+$blue-gray-700: #455A64;
+$blue-gray-800: #37474F;
+$blue-gray-50: #ECEFF1;
+$blue-gray-100: #CFD8DC;
+$green-400: #66BB6A;
+$green-500: #4CAF50;
+$blue-500: #2196F3;
+$light-border: 1px solid #ddd;
+
+.profile {
+  border-radius: 10px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: $box-shadow;
+  &__header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  &__background {
+    border-radius: 0px;
+    // height: 200px;
+    height: 100%;
+    width: 100%;
+  }
+  &__picture {
+    position: absolute;
+    bottom: -41px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    // border-radius: 50%;
+    box-shadow: $box-shadow;
+  }
+  &__content {
+    padding-top: 40px;
+    // text-align: center;
+  }
+  &__bio {
+    padding: 10px 20px;
+  }
+  &__name {
+    color: $blue-gray-800;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  &__info {
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 180px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    transition: .2s;
+    &:hover {
+      color: $blue-500;
+    }
+    &__icon {
+      padding-right: 15px;
+      color: $blue-500;
+      font-size: 20px;
+    }
+  }
+  &__twitter {
+    display: flex;
+    flex-wrap: wrap;
+    &__stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-basis: 50%;
+      padding: 15px 20px;
+      background: $blue-gray-50;
+      border-top: $light-border;
+      border-bottom: $light-border;
+      transition: .2s;
+      &:hover {
+        background: $blue-gray-100;
+      }
+      &--followers {
+        border-right: $light-border
+      }
+      &__count {
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 2px;
+      }
+    }
+    &__follow {
+      flex-basis: 100%;
+      &__button {
+        padding: 10px;
+        width: 100%;
+        border-radius: 0px 0px 0px 0px;
+        background: linear-gradient(24deg, #40A5BF, #B140BF);
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+            background: linear-gradient(24deg, #40A5BF, rgba(218, 0, 247, 0.959));
+        }
+      }
+    }
+  }
+}
+
 .position-relative
 {
     position: relative !important;

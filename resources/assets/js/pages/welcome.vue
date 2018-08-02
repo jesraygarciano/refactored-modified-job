@@ -1,6 +1,5 @@
 <template>
   <div>
-
   <header class="header-global">
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
       <div class="container">
@@ -16,7 +15,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="../index.html">
-                  <img :src="public_path + '/images/img/brand/blue.png'" alt="">
+                  <img :src="public_path + '/images/logo_brand.png'" alt="">
                 </a>
               </div>
               <div class="col-6 collapse-close">
@@ -31,7 +30,7 @@
             <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-ui-04 d-lg-none"></i>
-                <span class="nav-link-inner--text">Components</span>
+                <span class="nav-link-inner--text">Companies</span>
               </a>
               <div class="dropdown-menu dropdown-menu-xl">
                 <div class="dropdown-menu-inner">
@@ -59,7 +58,7 @@
             <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-collection d-lg-none"></i>
-                <span class="nav-link-inner--text">Examples</span>
+                <span class="nav-link-inner--text">Openings</span>
               </a>
               <div class="dropdown-menu">
                 <a href="../examples/landing.html" class="dropdown-item">Landing</a>
@@ -70,38 +69,23 @@
             </li>
           </ul>
           <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
-                <i class="fa fa-facebook-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Facebook</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
-                <i class="fa fa-instagram"></i>
-                <span class="nav-link-inner--text d-lg-none">Instagram</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
-                <i class="fa fa-twitter-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Twitter</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system" target="_blank" data-toggle="tooltip" title="Star us on Github">
-                <i class="fa fa-github"></i>
-                <span class="nav-link-inner--text d-lg-none">Github</span>
-              </a>
-            </li>
-            <li class="nav-item d-none d-lg-block ml-lg-4">
-              <a href="https://www.creative-tim.com/product/argon-design-system" target="_blank" class="btn btn-neutral btn-icon">
-                <span class="btn-inner--icon">
-                  <i class="fa fa-cloud-download mr-2"></i>
-                </span>
-                <span class="nav-link-inner--text">Download</span>
-              </a>
-            </li>
+            <template v-if="authenticated">
+              <li class="nav-item">
+                <router-link :to="{ name: 'home' }">
+                  {{ $t('home') }}
+                </router-link>
+              </li>
+            </template>
+            <template v-else>
+              <li class="nav-item d-none d-lg-block ml-lg-4">
+                <router-link :to="{ name: 'login' }">
+                  {{ $t('login') }}
+                </router-link>
+                <router-link :to="{ name: 'register' }">
+                  {{ $t('register') }}
+                </router-link>
+              </li>
+            </template>
           </ul>
         </div>
       </div>
@@ -126,11 +110,11 @@
           <div class="col px-0">
             <div class="row">
               <div class="col-lg-6">
-                <h1 class="display-3  text-white">A beautiful Design System
-                  <span>completed with examples</span>
+                <h1 class="display-3  text-white">Quality job search
+                  <span>for programmers</span>
                 </h1>
-                <p class="lead  text-white">The design system comes with four pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-                <div class="btn-wrapper">
+                <p class="lead  text-white">Build your professional identity online and stay connected with opportunities.</p>
+                <!-- <div class="btn-wrapper">
                   <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="btn btn-info btn-icon mb-3 mb-sm-0">
                     <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
                     <span class="btn-inner--text">Components</span>
@@ -139,7 +123,7 @@
                     <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
                     <span class="btn-inner--text">Download HTML</span>
                   </a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -158,14 +142,14 @@
                     <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
                       <i class="ni ni-check-bold"></i>
                     </div>
-                    <h6 class="text-primary text-uppercase">Download Argon</h6>
+                    <h6 class="text-primary text-uppercase">Accenture Inc.</h6>
                     <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
                     <div>
                       <span class="badge badge-pill badge-primary">design</span>
                       <span class="badge badge-pill badge-primary">system</span>
                       <span class="badge badge-pill badge-primary">creative</span>
                     </div>
-                    <a href="#" class="btn btn-primary mt-4">Learn more</a>
+                    <a href="#" class="btn btn-primary mt-4">Apply now</a>
                   </div>
                 </div>
               </div>
@@ -175,14 +159,14 @@
                     <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
                       <i class="ni ni-istanbul"></i>
                     </div>
-                    <h6 class="text-success text-uppercase">Build Something</h6>
+                    <h6 class="text-success text-uppercase">Alliance Inc.</h6>
                     <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
                     <div>
                       <span class="badge badge-pill badge-success">business</span>
                       <span class="badge badge-pill badge-success">vision</span>
                       <span class="badge badge-pill badge-success">success</span>
                     </div>
-                    <a href="#" class="btn btn-success mt-4">Learn more</a>
+                    <a href="#" class="btn btn-success mt-4">Apply now</a>
                   </div>
                 </div>
               </div>
@@ -192,14 +176,14 @@
                     <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
                       <i class="ni ni-planet"></i>
                     </div>
-                    <h6 class="text-warning text-uppercase">Prepare Launch</h6>
+                    <h6 class="text-warning text-uppercase">Nexseed Inc.</h6>
                     <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
                     <div>
                       <span class="badge badge-pill badge-warning">marketing</span>
                       <span class="badge badge-pill badge-warning">product</span>
                       <span class="badge badge-pill badge-warning">launch</span>
                     </div>
-                    <a href="#" class="btn btn-warning mt-4">Learn more</a>
+                    <a href="#" class="btn btn-warning mt-4">Apply now</a>
                   </div>
                 </div>
               </div>
@@ -210,7 +194,130 @@
     </section>
     <section class="section section-lg">
       <div class="container">
-        <div class="row row-grid align-items-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row row-grid">
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Accenture</h3>
+                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employee</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Accenture</h3>
+                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employee</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Accenture</h3>
+                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employee</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row row-grid align-items-center">
           <div class="col-md-6 order-md-2">
             <img :src="public_path + '/images/img/theme/promo-1.png'" class="img-fluid floating">
           </div>
@@ -261,8 +368,134 @@
               </ul>
             </div>
           </div>
+        </div> -->
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row row-grid">
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Accenture</h3>
+                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employee</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Accenture</h3>
+                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employee</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Accenture</h3>
+                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employee</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+     
     </section>
     <section class="section bg-secondary">
       <div class="container">
@@ -669,7 +902,6 @@
       </div>
     </div>
   </footer>
-
   </div>
 </template>
 

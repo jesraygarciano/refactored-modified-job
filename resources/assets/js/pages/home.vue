@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" fixed clipped class="grey lighten-4" app>
       <v-list dense class="grey lighten-4">
-          <!-- <span class="align-center">
+        <!-- <span class="align-center">
             <img :src="public_path + '/images/logo_brand.png'" alt="Jobseed LOGO">
           </span> -->
         <template v-for="(item, i) in items">
@@ -23,7 +23,9 @@
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title class="grey--text">
-                {{ item.text }}
+                <router-link :to="{ name: item.url}">
+                  {{ item.text }}
+                </router-link>
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -33,9 +35,9 @@
     <v-toolbar color="amber" app fixed clipped-left>
       <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
       <span class="title ml-3 mr-5">
-          <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
-            <img :src="public_path + '/images/logo_brand.png'" alt="Jobseed LOGO">
-          </router-link>
+        <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
+          <img :src="public_path + '/images/logo_brand.png'" alt="Jobseed LOGO">
+        </router-link>
         <!-- <span class="text">dashboard</span> -->
       </span>
       <!-- <v-text-field
@@ -52,6 +54,61 @@
       <v-btn icon>
         <v-icon>notifications</v-icon>
       </v-btn>
+
+
+        <ul class="navbar-nav ml-auto">
+          <!-- Authenticated -->
+          <li v-if="user" class="nav-item">
+            <router-link class="nav-link text-dark" :to="{ name: 'user.profile' }">
+              <!-- <img :src="user.photo" class="rounded-circle profile-photo mr-1"> -->
+              {{ user.first_name + " " + user.last_name}}
+            </router-link>
+          </li>
+          <!-- <li v-if="user" class="nav-item has-num-ico dropdown">
+            <p class="number-icon"><i class="number">1</i></p>
+            <a class="nav-link text-dark"
+               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bell-o" aria-hidden="true"></i>
+            </a>
+          </li> -->
+          <li v-if="user" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark"
+               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!--  -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <router-link :to="{ name: 'hiringApplication.applications' }" class="dropdown-item pl-3">
+                <fa icon="user" fixed-width/>
+                Your Job Applications
+              </router-link>
+              <router-link :to="{ name: 'settings.profile' }" class="dropdown-item pl-3">
+                <fa icon="cog" fixed-width/>
+                {{ $t('settings') }}
+              </router-link>
+              <router-link :to="{ name: 'user.companies' }" class="dropdown-item pl-3">
+                <i class="fa fa-building" style="padding: 0 3px;"></i> Companies
+              </router-link>
+              <div class="dropdown-divider"/>
+              <a href="#" class="dropdown-item pl-3" @click.prevent="logout">
+                <fa icon="sign-out-alt" fixed-width/>
+                {{ $t('logout') }}
+              </a>
+            </div>
+          </li>
+          <!-- Guest -->
+          <template v-else>
+            <li class="nav-item">
+              <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
+                {{ $t('login') }}
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'register' }" class="nav-link" active-class="active">
+                {{ $t('register') }}
+              </router-link>
+            </li>
+          </template>
+        </ul>
 
     </v-toolbar>
     <v-content>
@@ -192,10 +249,14 @@
                   </div>
                   <div class="card-body">
                     <div class="author">
-                      <a href="#">
-                        <img class="avatar border-gray" :src="public_path + '/images/mike.png'" alt="...">
-                        <h5 class="title">Jason Tatum</h5>
-                      </a>
+
+                        <a href="#">
+                          <router-link :to="{ name: user.profile}">
+                            <img class="avatar border-gray" :src="public_path + '/images/mike.png'" alt="...">
+                            <h5 class="title">Jason Tatum</h5>
+                          </router-link>
+                        </a>
+
                       <p class="description">
                         Web developer
                       </p>
@@ -235,72 +296,78 @@
 
               </div>
               <div class="col-md-7">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4 class="card-title">Employers conversation</h4>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled team-members">
-                        <li>
-                          <div class="row">
-                            <div class="col-md-2 col-2">
-                              <div class="avatar">
-                                <img :src="public_path + '/images/faces/ayo-ogunseinde-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                              </div>
-                            </div>
-                            <div class="col-md-7 col-7">
-                              DJ Khaled
-                              <br />
-                              <span class="text-muted">
-                                <small>Offline</small>
-                              </span>
-                            </div>
-                            <div class="col-md-3 col-3 text-right">
-                              <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="row">
-                            <div class="col-md-2 col-2">
-                              <div class="avatar">
-                                <img :src="public_path + '/images/faces/joe-gardner-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                              </div>
-                            </div>
-                            <div class="col-md-7 col-7">
-                              Creative Tim
-                              <br />
-                              <span class="text-success">
-                                <small>Available</small>
-                              </span>
-                            </div>
-                            <div class="col-md-3 col-3 text-right">
-                              <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="row">
-                            <div class="col-md-2 col-2">
-                              <div class="avatar">
-                                <img :src="public_path + '/images/faces/clem-onojeghuo-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                              </div>
-                            </div>
-                            <div class="col-ms-7 col-7">
-                              Flume
-                              <br />
-                              <span class="text-danger">
-                                <small>Busy</small>
-                              </span>
-                            </div>
-                            <div class="col-md-3 col-3 text-right">
-                              <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Employers conversation</h4>
                   </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled team-members">
+                      <li>
+                        <div class="row">
+                          <div class="col-md-2 col-2">
+                            <div class="avatar">
+                              <img :src="public_path + '/images/faces/ayo-ogunseinde-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-md-7 col-7">
+                            DJ Khaled
+                            <br />
+                            <span class="text-muted">
+                              <small>Offline</small>
+                            </span>
+                          </div>
+                          <div class="col-md-3 col-3 text-right">
+                            <btn class="btn btn-sm btn-outline-success btn-round btn-icon">
+                              <i class="fa fa-envelope"></i>
+                            </btn>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                          <div class="col-md-2 col-2">
+                            <div class="avatar">
+                              <img :src="public_path + '/images/faces/joe-gardner-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-md-7 col-7">
+                            Creative Tim
+                            <br />
+                            <span class="text-success">
+                              <small>Available</small>
+                            </span>
+                          </div>
+                          <div class="col-md-3 col-3 text-right">
+                            <btn class="btn btn-sm btn-outline-success btn-round btn-icon">
+                              <i class="fa fa-envelope"></i>
+                            </btn>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                          <div class="col-md-2 col-2">
+                            <div class="avatar">
+                              <img :src="public_path + '/images/faces/clem-onojeghuo-2.jpg'" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-ms-7 col-7">
+                            Flume
+                            <br />
+                            <span class="text-danger">
+                              <small>Busy</small>
+                            </span>
+                          </div>
+                          <div class="col-md-3 col-3 text-right">
+                            <btn class="btn btn-sm btn-outline-success btn-round btn-icon">
+                              <i class="fa fa-envelope"></i>
+                            </btn>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">
@@ -361,7 +428,9 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import {
+    mapGetters
+  } from 'vuex'
 
   export default {
     layout: "welcome",
@@ -377,11 +446,13 @@
       drawer: null,
       items: [{
           icon: 'lightbulb_outline',
-          text: 'My profile'
+          text: 'My profile',
+          url: 'user.profile'
         },
         {
           icon: 'touch_app',
-          text: 'See resume'
+          text: 'See resume',
+          url: ''
         },
         {
           divider: true
@@ -425,25 +496,29 @@
         },
         {
           icon: 'keyboard',
-          text: 'Keyboard shortcuts'
+          text: 'Log Out',
+          url: 'user.profile'
+
         }
       ]
     }),
     props: {
       source: String
     },
-      computed: mapGetters({
-    user: 'auth/user'
-  }),
-  methods: {
-    async logout () {
-      // Log out the user.
-      await this.$store.dispatch('auth/logout')
+    computed: mapGetters({
+      user: 'auth/user'
+    }),
+    methods: {
+      async logout() {
+        // Log out the user.
+        await this.$store.dispatch('auth/logout')
 
-      // Redirect to login.
-      this.$router.push({ name: 'login' })
+        // Redirect to login.
+        this.$router.push({
+          name: 'login'
+        })
+      }
     }
-  }
   }
 
 </script>
