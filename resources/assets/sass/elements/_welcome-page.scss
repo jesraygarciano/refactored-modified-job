@@ -32,6 +32,14 @@ $light-border: 1px solid #ddd;
     height: 100px;
     box-shadow: $box-shadow;
   }
+  &__picture_sl-opening {
+    position: absolute;
+    bottom: -41px;
+    left: 108px;
+    width: 100px;
+    height: 100px;
+    box-shadow: $box-shadow;
+  }  
   &__content {
     padding-top: 40px;
     // text-align: center;
@@ -631,6 +639,7 @@ $light-border: 1px solid #ddd;
         height: 400px;
     }
 }
+
 
 // Components section (for demo)
 .section-components {

@@ -132,60 +132,121 @@
       <!-- 1st Hero Variation -->
     </div>
     <section class="section section-lg pt-lg-0 mt--200">
-      <div class="container">
+      <div class="container slider-opening">
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="row row-grid">
               <div class="col-lg-4">
+
                 <div class="card card-lift--hover shadow border-0">
-                  <div class="card-body py-5">
-                    <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                      <i class="ni ni-check-bold"></i>
-                    </div>
-                    <h6 class="text-primary text-uppercase">Accenture Inc.</h6>
-                    <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                    <div>
-                      <span class="badge badge-pill badge-primary">design</span>
-                      <span class="badge badge-pill badge-primary">system</span>
-                      <span class="badge badge-pill badge-primary">creative</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-4">Apply now</a>
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="https://media.glassdoor.com/l/eb/60/dd/bf/interior-view.jpg" />
+                          <img class="profile__picture_sl-opening" src="https://i.imgur.com/7ZOgkok.jpg" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">PHP Web developer</h3>
+                          </div>
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </div>
+
+
+              </div>
+              <div class="col-lg-4">
+
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
+                          <img class="profile__picture_sl-opening" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Python Developer</h3>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
               </div>
               <div class="col-lg-4">
                 <div class="card card-lift--hover shadow border-0">
-                  <div class="card-body py-5">
-                    <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                      <i class="ni ni-istanbul"></i>
-                    </div>
-                    <h6 class="text-success text-uppercase">Alliance Inc.</h6>
-                    <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                    <div>
-                      <span class="badge badge-pill badge-success">business</span>
-                      <span class="badge badge-pill badge-success">vision</span>
-                      <span class="badge badge-pill badge-success">success</span>
-                    </div>
-                    <a href="#" class="btn btn-success mt-4">Apply now</a>
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="http://business.inquirer.net/files/2015/08/alcoves5.jpg" />
+                          <img class="profile__picture_sl-opening" src="http://findonline.ph/wp-content/uploads/2017/11/Square-Ayala-Premier.jpg" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Ruby on rails .NET Developer</h3>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0">
-                  <div class="card-body py-5">
-                    <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                      <i class="ni ni-planet"></i>
-                    </div>
-                    <h6 class="text-warning text-uppercase">Nexseed Inc.</h6>
-                    <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                    <div>
-                      <span class="badge badge-pill badge-warning">marketing</span>
-                      <span class="badge badge-pill badge-warning">product</span>
-                      <span class="badge badge-pill badge-warning">launch</span>
-                    </div>
-                    <a href="#" class="btn btn-warning mt-4">Apply now</a>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -207,18 +268,8 @@
                       <div class="profile__content">
                           <div class="profile__bio">
                               <h3 class="profile__name">Accenture</h3>
-                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
-                          <!-- <div class="profile__links">
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-map-marker"></i>
-                                  <span class="profile__link__text">New York</span>
-                              </a>
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-envelope"></i>
-                                  <span class="profile__link__text">Send Email </span>
-                              </a>
-                          </div> -->
+
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
@@ -229,7 +280,7 @@
                                   <span class="profile__twitter__stats__label">Jobs</span>
                               </div>
                               <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
+                                  <button class="profile__twitter__follow__button">View company</button>
                               </div>
                           </div>
                       </div>
@@ -240,24 +291,13 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="profile">
                       <div class="profile__header">
-                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
-                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                          <img class="profile__background" src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/05/02/Photos/callcentre-kpVC--621x414@LiveMint.jpg" />
+                          <img class="profile__picture" src="https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/052013/convergys_logo.png?itok=Lwu77IHC" />
                       </div>
                       <div class="profile__content">
                           <div class="profile__bio">
-                              <h3 class="profile__name">Accenture</h3>
-                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
+                              <h3 class="profile__name">Convergys</h3>
                           </div>
-                          <!-- <div class="profile__links">
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-map-marker"></i>
-                                  <span class="profile__link__text">New York</span>
-                              </a>
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-envelope"></i>
-                                  <span class="profile__link__text">Send Email </span>
-                              </a>
-                          </div> -->
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
@@ -268,7 +308,7 @@
                                   <span class="profile__twitter__stats__label">Jobs</span>
                               </div>
                               <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
+                                  <button class="profile__twitter__follow__button">View company</button>
                               </div>
                           </div>
                       </div>
@@ -307,7 +347,7 @@
                                   <span class="profile__twitter__stats__label">Jobs</span>
                               </div>
                               <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
+                                  <button class="profile__twitter__follow__button">View company</button>
                               </div>
                           </div>
                       </div>
@@ -317,58 +357,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="row row-grid align-items-center">
-          <div class="col-md-6 order-md-2">
-            <img :src="public_path + '/images/img/theme/promo-1.png'" class="img-fluid floating">
-          </div>
-          <div class="col-md-6 order-md-1">
-            <div class="pr-md-5">
-              <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
-                <i class="ni ni-settings-gear-65"></i>
-              </div>
-              <h3>Awesome features</h3>
-              <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-              <ul class="list-unstyled mt-5">
-                <li class="py-2">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="badge badge-circle badge-success mr-3">
-                        <i class="ni ni-settings-gear-65"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <h6 class="mb-0">Carefully crafted components</h6>
-                    </div>
-                  </div>
-                </li>
-                <li class="py-2">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="badge badge-circle badge-success mr-3">
-                        <i class="ni ni-html5"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <h6 class="mb-0">Amazing page examples</h6>
-                    </div>
-                  </div>
-                </li>
-                <li class="py-2">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="badge badge-circle badge-success mr-3">
-                        <i class="ni ni-satisfied"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <h6 class="mb-0">Super friendly support team</h6>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
       </div>
       <div class="container">
         <div class="row justify-content-center">
@@ -406,7 +394,7 @@
                                   <span class="profile__twitter__stats__label">Jobs</span>
                               </div>
                               <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
+                                  <button class="profile__twitter__follow__button">View company</button>
                               </div>
                           </div>
                       </div>
@@ -417,12 +405,41 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="profile">
                       <div class="profile__header">
-                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
-                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                          <img class="profile__background" src="https://officesnapshots.com/wp-content/uploads/2018/05/qbe-insurance-offices-hong-kong-1-700x467.jpg" />
+                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQRneLvqpg9ZV8QxmfZrzXp9pZmEmMfo7wcR4H-Ud0X6OdicvY" />
                       </div>
                       <div class="profile__content">
                           <div class="profile__bio">
-                              <h3 class="profile__name">Accenture</h3>
+                              <h3 class="profile__name">QBE Inc.</h3>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
+                          </div>
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">97,000</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">57</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View company</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
+                          <img class="profile__background" src="https://c1.staticflickr.com/7/6075/6044820487_843464499a_b.jpg" />
+                          <img class="profile__picture" src="data:image/png;base64,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" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Ripeconcepts</h3>
                               <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
                           <!-- <div class="profile__links">
@@ -445,46 +462,7 @@
                                   <span class="profile__twitter__stats__label">Jobs</span>
                               </div>
                               <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0">
-                  <div class="profile">
-                      <div class="profile__header">
-                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
-                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
-                      </div>
-                      <div class="profile__content">
-                          <div class="profile__bio">
-                              <h3 class="profile__name">Accenture</h3>
-                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
-                          </div>
-                          <!-- <div class="profile__links">
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-map-marker"></i>
-                                  <span class="profile__link__text">New York</span>
-                              </a>
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-envelope"></i>
-                                  <span class="profile__link__text">Send Email </span>
-                              </a>
-                          </div> -->
-                          <div class="profile__twitter">
-                              <div class="profile__twitter__stats profile__twitter__stats--followers">
-                                  <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employees</span>
-                              </div>
-                              <div class="profile__twitter__stats profile__twitter__stats--following">
-                                  <span class="profile__twitter__stats__count">57</span>
-                                  <span class="profile__twitter__stats__label">Jobs</span>
-                              </div>
-                              <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
+                                  <button class="profile__twitter__follow__button">View company</button>
                               </div>
                           </div>
                       </div>
@@ -648,13 +626,6 @@
       <div class="container">
         <div class="row row-grid justify-content-center">
           <div class="col-lg-8 text-center">
-            <h2 class="display-3">Do you love this awesome
-              <span class="text-success">Design System for Bootstrap 4?</span>
-            </h2>
-            <p class="lead">Cause if you do, it can be yours for FREE. Hit the button below to navigate to Creative Tim where you can find the Design System in HTML. Start a new project or give an old Bootstrap project a new look!</p>
-            <div class="btn-wrapper">
-              <a href="https://www.creative-tim.com/product/argon-design-system" class="btn btn-primary mb-3 mb-sm-0">Download HTML</a>
-            </div>
             <div class="text-center">
               <h4 class="display-4 mb-5 mt-5">Available on these technologies</h4>
               <div class="row justify-content-center">
