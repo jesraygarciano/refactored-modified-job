@@ -16,6 +16,9 @@ class OpeningController extends Controller
             'title' => 'required',
             'salary_range' => 'required',
             'professional_years' => 'required',
+            'hiring_step_group_id' => 'required',
+        ],[
+            'hiring_step_group_id.required' => 'Hiring Procedure field required.'
         ]);
 
         return ["status" => "validated"];
@@ -38,6 +41,7 @@ class OpeningController extends Controller
 
         $opening->salary_range = $request->salary_range;
         $opening->professional_years = $request->professional_years;
+        $opening->hiring_step_group_id = $request->hiring_step_group_id;
         $opening->save();
         
         if($request->picture){
@@ -51,5 +55,10 @@ class OpeningController extends Controller
         foreach($request->skills['technologies'] as $skill){
             $opening->addUpdateTechnology([ 'id' => $skill, 'expertise_level' => 0 ]);
         }
+    }
+
+    public function search(Request $request){
+        $openings = Opening::where('openings.title','like','%'.$request->keyword.'%');
+        return ['openings'=>$openings->with('company','programmingLanguages','technologies')->get()];
     }
 }

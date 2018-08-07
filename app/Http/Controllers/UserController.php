@@ -8,12 +8,55 @@ use \App\UserAddress;
 use \App\UserContactNumber;
 use \App\WorkExperience;
 use \App\EducationalBackground;
+use \App\Company;
 
 class UserController extends Controller
 {
+
+    /**
+     * Return a filtered list of companies
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return Illuminate\Http\Resources\JsonResource
+     */
+    public function fetch_companies(Request $request){
+        $_companies = Company::all();
+        $companies = [];
+        foreach($_companies as $company){
+            $company->hiring_application_count = $company->applications()->count();
+            $company->collaborator_count = $company->collaborators()->count();
+            array_push($companies,$company);
+        }
+        return ["data"=>$companies];
+    }
+
+    public function followCompany(Request $request){
+        $company = Company::find($request->company_id);
+        $user = \Auth::user();
+        if($request->follow == 1)
+        {
+            $user->followCompany($company->id);
+        }
+        else
+        {
+            $user->unFollowCompany($company->id);
+        }
+
+        return ['status'=>'success'];
+    }
     
     public function fetch_user(Request $request){
         return User::find($request->user_id);
+    }
+
+    public function fetchFollowedCompanies(Request $request){
+        $companies = \Auth::user()->followedCompanies;
+        return $companies;
+    }
+
+    public function fetchSearch(Request $request){
+        if(!$request->keyword) return [];
+        return User::where(\DB::raw('concat(first_name," ",last_name)'),'like','%'.$request->keyword.'%')->get();
     }
 
     public function fetch_programming_languages(Request $request){
@@ -206,6 +249,12 @@ class UserController extends Controller
         $address->delete();
 
         return 'deleted';
+    }
+
+    public function uploadResumeFile(Request $request){
+        $user = User::findOrFail($request->user_id);
+        $user->saveResumeFile($request->resume_file);
+        return ['status'=>'created', 'user'=>$user];
     }
     
 }
