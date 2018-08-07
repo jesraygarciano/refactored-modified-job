@@ -25,18 +25,17 @@
 
  @import 'paper-dashboard/variables';
  @import 'paper-dashboard/mixins';
- 
+
  // Plugins CSS
  @import "paper-dashboard/plugins/plugin-animate-bootstrap-notify";
  @import "paper-dashboard/plugins/plugin-perfect-scrollbar";
- 
+
  // Core CSS
  @import "paper-dashboard/buttons";
  @import "paper-dashboard/inputs";
  @import "paper-dashboard/typography";
  @import "paper-dashboard/misc";
  @import "paper-dashboard/checkboxes-radio";
- 
  
  // components
  @import "paper-dashboard/navbar";
@@ -51,12 +50,42 @@
  @import "paper-dashboard/fixed-plugin";
  
  // cards
- @import "paper-dashboard/cards";
- @import "paper-dashboard/cards/card-plain";
- @import "paper-dashboard/cards/card-chart";
- @import "paper-dashboard/cards/card-user";
- @import "paper-dashboard/cards/card-map";
- @import "paper-dashboard/cards/card-stats";
- 
- @import "paper-dashboard/responsive";
- 
+@import "paper-dashboard/cards";
+@import "paper-dashboard/cards/card-plain";
+@import "paper-dashboard/cards/card-chart";
+@import "paper-dashboard/cards/card-user";
+@import "paper-dashboard/cards/card-map";
+@import "paper-dashboard/cards/card-stats";
+
+@import "paper-dashboard/responsive";
+
+@import 'elements/side-popup';
+@import 'elements/company-card';
+
+.has-border-right-md{
+    border-right:1px solid #cecece;
+}
+.has-border-right-sm{
+    border-right:1px solid #cecece;
+}
+
+.show-md{
+    display: none!important;
+}
+@media(max-width: 767.98px){
+    .show-md{
+        display: initial!important;
+    }
+    .hidden-md{
+        display: none;
+    }
+    .has-border-right-md{
+        border: none;
+    }
+}
+
+@media(max-width: 576px){
+    .has-border-right-sm{
+        border: none;
+    }
+}

@@ -11,12 +11,12 @@ import PhotoViewer from './PhotoViewer'
 import OpeningCard from './OpeningCard'
 import PhotoConverter from './PhotoConverter'
 import IconizedPhoto from './IconizedPhoto'
-import CompanySearchTable from './company/CompanySearchTable'
 import Wizard from './Wizard'
 import SkillSelector from './SkillSelector'
 import CompanyCard from './CompanyCard'
 import IconButton from './IconButton'
 import UnickTable from './UnickTable'
+import EntityHeader from './EntityHeader'
 import { HasError, AlertError, AlertSuccess } from 'vform'
 
 var mixins = {
@@ -56,6 +56,7 @@ Vue.mixin(mixins);
   UnickTable,
   Child,
   Button,
+  EntityHeader,
   Checkbox,
   HasError,
   LineInput,
@@ -69,7 +70,6 @@ Vue.mixin(mixins);
   PhotoViewer,
   OpeningCard,
   PhotoConverter,
-  CompanySearchTable,
   Wizard,
   AlertSuccess
 ].forEach(Component => {

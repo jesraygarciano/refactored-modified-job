@@ -207,7 +207,7 @@
                       <div class="profile__content">
                           <div class="profile__bio">
                               <h3 class="profile__name">Accenture</h3>
-                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
                           <!-- <div class="profile__links">
                               <a class="profile__link" href="#">
@@ -222,7 +222,7 @@
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employee</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
                               </div>
                               <div class="profile__twitter__stats profile__twitter__stats--following">
                                   <span class="profile__twitter__stats__count">57</span>
@@ -246,7 +246,7 @@
                       <div class="profile__content">
                           <div class="profile__bio">
                               <h3 class="profile__name">Accenture</h3>
-                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
                           <!-- <div class="profile__links">
                               <a class="profile__link" href="#">
@@ -261,7 +261,7 @@
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employee</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
                               </div>
                               <div class="profile__twitter__stats profile__twitter__stats--following">
                                   <span class="profile__twitter__stats__count">57</span>
@@ -279,13 +279,13 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="profile">
                       <div class="profile__header">
-                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
-                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
+                          <img class="profile__background" src="http://www.alliance.com.ph/images/news/20160505_1.png" />
+                          <img class="profile__picture" src="https://s3-media4.fl.yelpcdn.com/bphoto/88ofcrzV3VrJTQbUm_Xjtw/o.jpg" />
                       </div>
                       <div class="profile__content">
                           <div class="profile__bio">
-                              <h3 class="profile__name">Accenture</h3>
-                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                              <h3 class="profile__name">Alliance</h3>
+                              <!-- <p class="profile__info">American firm known for IT technology like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
                           <!-- <div class="profile__links">
                               <a class="profile__link" href="#">
@@ -300,7 +300,7 @@
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employee</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
                               </div>
                               <div class="profile__twitter__stats profile__twitter__stats--following">
                                   <span class="profile__twitter__stats__count">57</span>
@@ -378,13 +378,52 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="profile">
                       <div class="profile__header">
+                          <img class="profile__background" src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,f_auto,h_900,q_80,w_1200/v1/263321/http_s3.amazonaws.com_feather-files-aviary-prod-us-east-1_f5da8ea5e_2015-02-20_025c01d3e38340509e44f94c0db18547_aozhp1.jpg" />
+                          <img class="profile__picture" src="https://liginc.co.jp/wp-content/uploads/2014/02/141.jpg" />
+                      </div>
+                      <div class="profile__content">
+                          <div class="profile__bio">
+                              <h3 class="profile__name">Nexseed</h3>
+                              <!-- <p class="profile__info">Japanese company known for best ESL School in Cebu, Taiwan, and Japan.</p> -->
+                          </div>
+                          <!-- <div class="profile__links">
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-map-marker"></i>
+                                  <span class="profile__link__text">New York</span>
+                              </a>
+                              <a class="profile__link" href="#">
+                                  <i class="profile__link__icon fa fa-envelope"></i>
+                                  <span class="profile__link__text">Send Email </span>
+                              </a>
+                          </div> -->
+                          <div class="profile__twitter">
+                              <div class="profile__twitter__stats profile__twitter__stats--followers">
+                                  <span class="profile__twitter__stats__count">1,500</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
+                              </div>
+                              <div class="profile__twitter__stats profile__twitter__stats--following">
+                                  <span class="profile__twitter__stats__count">15</span>
+                                  <span class="profile__twitter__stats__label">Jobs</span>
+                              </div>
+                              <div class="profile__twitter__follow">
+                                  <button class="profile__twitter__follow__button">View jobs</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="profile">
+                      <div class="profile__header">
                           <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
                           <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
                       </div>
                       <div class="profile__content">
                           <div class="profile__bio">
                               <h3 class="profile__name">Accenture</h3>
-                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
                           <!-- <div class="profile__links">
                               <a class="profile__link" href="#">
@@ -399,7 +438,7 @@
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employee</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
                               </div>
                               <div class="profile__twitter__stats profile__twitter__stats--following">
                                   <span class="profile__twitter__stats__count">57</span>
@@ -423,7 +462,7 @@
                       <div class="profile__content">
                           <div class="profile__bio">
                               <h3 class="profile__name">Accenture</h3>
-                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
+                              <!-- <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p> -->
                           </div>
                           <!-- <div class="profile__links">
                               <a class="profile__link" href="#">
@@ -438,46 +477,7 @@
                           <div class="profile__twitter">
                               <div class="profile__twitter__stats profile__twitter__stats--followers">
                                   <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employee</span>
-                              </div>
-                              <div class="profile__twitter__stats profile__twitter__stats--following">
-                                  <span class="profile__twitter__stats__count">57</span>
-                                  <span class="profile__twitter__stats__label">Jobs</span>
-                              </div>
-                              <div class="profile__twitter__follow">
-                                  <button class="profile__twitter__follow__button">View jobs</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0">
-                  <div class="profile">
-                      <div class="profile__header">
-                          <img class="profile__background" src="http://negosentro.com/wp-content/uploads/2017/01/accenture-12-620x330.jpg" />
-                          <img class="profile__picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHprj7pAgUi2CNdJSIL8dpq1nZo0G8hU0jX7i-thPMI3k9iFH1" />
-                      </div>
-                      <div class="profile__content">
-                          <div class="profile__bio">
-                              <h3 class="profile__name">Accenture</h3>
-                              <p class="profile__info">American film actress known for her work in films like Lost in Translation, Vicky Cristina Barcelona, and Hitchcock.</p>
-                          </div>
-                          <!-- <div class="profile__links">
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-map-marker"></i>
-                                  <span class="profile__link__text">New York</span>
-                              </a>
-                              <a class="profile__link" href="#">
-                                  <i class="profile__link__icon fa fa-envelope"></i>
-                                  <span class="profile__link__text">Send Email </span>
-                              </a>
-                          </div> -->
-                          <div class="profile__twitter">
-                              <div class="profile__twitter__stats profile__twitter__stats--followers">
-                                  <span class="profile__twitter__stats__count">97,000</span>
-                                  <span class="profile__twitter__stats__label">Employee</span>
+                                  <span class="profile__twitter__stats__label">Employees</span>
                               </div>
                               <div class="profile__twitter__stats profile__twitter__stats--following">
                                   <span class="profile__twitter__stats__count">57</span>
@@ -497,37 +497,6 @@
       </div>
      
     </section>
-    <section class="section bg-secondary">
-      <div class="container">
-        <div class="row row-grid align-items-center">
-          <div class="col-md-6">
-            <div class="card bg-default shadow border-0">
-              <img :src="public_path + '/images/img/theme/img-1-1200x1000.jpg'" class="card-img-top">
-              <blockquote class="card-blockquote">
-                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
-                  <polygon points="0,52 583,95 0,95" class="fill-default" />
-                  <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default" />
-                </svg>
-                <h4 class="display-3 font-weight-bold text-white">Design System</h4>
-                <p class="lead text-italic text-white">The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens.</p>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="pl-md-5">
-              <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                <i class="ni ni-settings"></i>
-              </div>
-              <h3>Our customers</h3>
-              <p class="lead">Don't let your uses guess by attaching tooltips and popoves to any element. Just make sure you enable them first via JavaScript.</p>
-              <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-              <p>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.</p>
-              <a href="#" class="font-weight-bold text-warning mt-5">A beautiful UI Kit for impactful websites</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="section section section-shaped my-0 overflow-hidden">
       <div class="shape shape-style-1 bg-gradient-warning shape-skew">
         <span></span>
@@ -539,24 +508,19 @@
       </div>
       <div class="container py-0">
         <div class="row row-grid align-items-center">
-          <div class="col-md-6 order-lg-2 ml-lg-auto">
+          <div class="col-md-5 order-lg-2 ml-lg-auto">
             <div class="position-relative pl-md-5">
               <img :src="public_path+ '/images/img/ill/ill-2.svg'" class="img-center img-fluid">
             </div>
           </div>
-          <div class="col-lg-6 order-lg-1">
+          <div class="col-lg-7 order-lg-1">
             <div class="d-flex px-3">
-              <div>
-                <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                  <i class="ni ni-building text-primary"></i>
-                </div>
-              </div>
               <div class="pl-4">
-                <h4 class="display-3 text-white">Modern Interface</h4>
-                <p class="text-white">The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens.</p>
+                <h4 class="display-3 text-white">By Programming language</h4>
+                <p class="text-white">Choose the job based on your language specialty</p>
               </div>
             </div>
-            <div class="card shadow shadow-lg--hover mt-5">
+            <!-- <div class="card shadow shadow-lg--hover mt-5">
               <div class="card-body">
                 <div class="d-flex px-3">
                   <div>
@@ -587,199 +551,95 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section-lg">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-lg">
-          <div class="col-lg-8">
-            <h2 class="display-3">The amazing Team</h2>
-            <p class="lead text-muted">According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record maximum.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="px-4">
-              <img :src="public_path + '/images/img/theme/team-1-800x800.jpg'" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
-              <div class="pt-4 text-center">
-                <h5 class="title">
-                  <span class="d-block mb-1">Ryan Tompson</span>
-                  <small class="h6 text-muted">Web Developer</small>
-                </h5>
-                <div class="mt-3">
-                  <a href="#" class="btn btn-warning btn-icon-only rounded-circle">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="#" class="btn btn-warning btn-icon-only rounded-circle">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a href="#" class="btn btn-warning btn-icon-only rounded-circle">
-                    <i class="fa fa-dribbble"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="px-4">
-              <img :src="public_path + '/images/img/theme/team-2-800x800.jpg'" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
-              <div class="pt-4 text-center">
-                <h5 class="title">
-                  <span class="d-block mb-1">Romina Hadid</span>
-                  <small class="h6 text-muted">Marketing Strategist</small>
-                </h5>
-                <div class="mt-3">
-                  <a href="#" class="btn btn-primary btn-icon-only rounded-circle">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="#" class="btn btn-primary btn-icon-only rounded-circle">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a href="#" class="btn btn-primary btn-icon-only rounded-circle">
-                    <i class="fa fa-dribbble"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="px-4">
-              <img :src="public_path + '/images/img/theme/team-3-800x800.jpg'" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
-              <div class="pt-4 text-center">
-                <h5 class="title">
-                  <span class="d-block mb-1">Alexander Smith</span>
-                  <small class="h6 text-muted">UI/UX Designer</small>
-                </h5>
-                <div class="mt-3">
-                  <a href="#" class="btn btn-info btn-icon-only rounded-circle">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="#" class="btn btn-info btn-icon-only rounded-circle">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a href="#" class="btn btn-info btn-icon-only rounded-circle">
-                    <i class="fa fa-dribbble"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-            <div class="px-4">
-              <img :src="public_path + '/images/img/theme/team-4-800x800.jpg'" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
-              <div class="pt-4 text-center">
-                <h5 class="title">
-                  <span class="d-block mb-1">John Doe</span>
-                  <small class="h6 text-muted">Founder and CEO</small>
-                </h5>
-                <div class="mt-3">
-                  <a href="#" class="btn btn-success btn-icon-only rounded-circle">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="#" class="btn btn-success btn-icon-only rounded-circle">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                  <a href="#" class="btn btn-success btn-icon-only rounded-circle">
-                    <i class="fa fa-dribbble"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section-lg pt-0">
-      <div class="container">
-        <div class="card bg-gradient-warning shadow-lg border-0">
-          <div class="p-5">
-            <div class="row align-items-center">
-              <div class="col-lg-8">
-                <h3 class="text-white">We made website building easier for you.</h3>
-                <p class="lead text-white mt-3">I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture.</p>
-              </div>
-              <div class="col-lg-3 ml-lg-auto">
-                <a href="https://www.creative-tim.com/product/argon-design-system" class="btn btn-lg btn-block btn-white">Download HTML</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section-shaped my-0 overflow-hidden">
-      <div class="shape shape-style-3 bg-gradient-default shape-skew">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="container pt-lg pb-300">
-        <div class="row text-center justify-content-center">
-          <div class="col-lg-10">
-            <h2 class="display-3 text-white">Build something</h2>
-            <p class="lead text-white">According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record low maximum sea ice extent tihs year down to low ice.</p>
-          </div>
-        </div>
-        <div class="row row-grid mt-5">
-          <div class="col-lg-4">
-            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-              <i class="ni ni-settings text-primary"></i>
-            </div>
-            <h5 class="text-white mt-3">Building tools</h5>
-            <p class="text-white mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          <div class="col-lg-4">
-            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-              <i class="ni ni-ruler-pencil text-primary"></i>
-            </div>
-            <h5 class="text-white mt-3">Grow your market</h5>
-            <p class="text-white mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          <div class="col-lg-4">
-            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-              <i class="ni ni-atom text-primary"></i>
-            </div>
-            <h5 class="text-white mt-3">Launch time</h5>
-            <p class="text-white mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section-lg pt-lg-0 section-contact-us">
-      <div class="container">
-        <div class="row justify-content-center mt--300">
-          <div class="col-lg-8">
-            <div class="card bg-gradient-secondary shadow">
-              <div class="card-body p-lg-5">
-                <h4 class="mb-1">Want to work with us?</h4>
-                <p class="mt-0">Your project is very important to us.</p>
-                <div class="form-group mt-5">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>
+            </div> -->
+
+        <ul class="ud-list">
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-php">
+                        <img src="http://www.rnm.solutions/wp-content/uploads/2018/01/icon-php1-1.png">
                     </div>
-                    <input class="form-control" placeholder="Your name" type="text">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    <b>Php</b>
+                </a>
+            </li>
+            <li>
+                    <a href="#">
+                    <div class="round-icon medium-round-icon lang-ruby">
+                        <img src="https://rebornix.gallerycdn.vsassets.io/extensions/rebornix/ruby/0.15.0/1503328840286/Microsoft.VisualStudio.Services.Icons.Default">
                     </div>
-                    <input class="form-control" placeholder="Email address" type="email">
-                  </div>
-                </div>
-                <div class="form-group mb-4">
-                  <textarea class="form-control form-control-alternative" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
-                </div>
-                <div>
-                  <button type="button" class="btn btn-default btn-round btn-block btn-lg">Send Message</button>
-                </div>
-              </div>
-            </div>
+                    <b>Ruby</b>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-java">
+                        <img src="https://images.sftcdn.net/images/t_optimized,f_auto/p/2f4c04f4-96d0-11e6-9830-00163ed833e7/3163796423/java-runtime-environment-logo.png">
+                    </div>
+                    <b>Java</b>
+                </a>
+            </li>
+            <li>
+                    <a href="#">
+                    <div class="round-icon medium-round-icon lang-cplus2">
+                        <img src="https://png.icons8.com/color/1600/c-plus-plus-logo.png">
+                    </div>
+                    <b>C++</b>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-python">
+                        <img src="http://www.iconarchive.com/download/i73027/cornmanthe3rd/plex/Other-python.ico">
+                    </div>
+                    <b>Python</b>
+                </a>
+            </li>
+        </ul>
+        <ul class="ud-list" style="margin-top:-50px;">
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-swift">
+                        <div class="swift-round">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png">
+                        </div>
+                    </div>
+                    <b>Swift</b>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-go">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Gogophercolor.png/1024px-Gogophercolor.png">
+                    </div>
+                    <b>Go</b>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon csharp">
+                        <img src="https://developer.fedoraproject.org/static/logo/csharp.png">
+                    </div>
+                    <b>C#</b>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-javascript">
+                        <img src="http://www.northeastjsconference.com/wp-content/uploads/2015/11/learn-javascript.png"  id="javascript-imgsize">
+                    </div>
+                    <b>Javascript</b>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="round-icon medium-round-icon lang-r-language">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/2000px-R_logo.svg.png">
+                    </div>
+                    <b>R</b>
+                </a>
+            </li>
+        </ul>
+
           </div>
         </div>
       </div>
