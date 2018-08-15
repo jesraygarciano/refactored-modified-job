@@ -13,10 +13,11 @@
         </div>
       </div>
     </div>
-    <table class="table table-hover simple-table">
-      <thead>
+    <table class="table table-hover simple-table table-responsive-sm table-hover table-outline mb-0">
+      <thead class="thead-light">
         <tr>
-          <th>
+          <th class="text-center">
+            <i class="fa fa-clipboard"></i>
             Job
           </th>
           <th>
@@ -52,7 +53,7 @@
           </td>
         </tr>
         <tr v-if="applications.length == 0">
-          <td colspan="3" style="padding: 10px;"> No result </td>
+          <td colspan="4" style="padding: 10px;"> No result </td>
         </tr>
       </tbody>
     </table>

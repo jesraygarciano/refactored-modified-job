@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify'
 import store from '~/store'
 import router from '~/router'
 import i18n from '~/plugins/i18n'
@@ -10,8 +9,6 @@ let Bootstrap = require('bootstrap');
 
 import '~/plugins'
 import '~/components'
-
-Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
