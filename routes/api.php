@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
 
-    // user
+    // user routes
     Route::group(['prefix' => 'userInfo'], function(){
         // fetch'
         Route::group(['prefix' => 'fetch'], function(){
@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth:api'], function () {
             Route::post('skills', 'UserController@update_skills');
             Route::post('user_description', 'UserController@update_description');
             Route::post('basic_info', 'UserController@update_basic_info');
+            Route::patch('photo', 'UserController@updatePhoto');
         });
         // add
         Route::group(['prefix' => 'add'], function(){
@@ -64,7 +65,7 @@ Route::group(['middleware' => 'auth:api'], function () {
         
     });
 
-    // company
+    // company routes
     Route::group(['prefix' => "company"], function(){
         Route::post('create', 'CompanyController@create');
         Route::group(['prefix'=>'fetch'], function(){
@@ -85,6 +86,12 @@ Route::group(['middleware' => 'auth:api'], function () {
         // delete
         Route::group(['prefix'=>'delete'], function(){
             Route::delete('collaborator','CompanyController@removeCollaborator');
+        });
+
+        // update
+        Route::group(['prefix' => 'update'], function(){
+            Route::patch('basic/info', 'CompanyController@updateBasicInfo');
+            Route::patch('website/info', 'CompanyController@updateWebsiteInfo');
         });
         
         Route::group(['prefix' => 'hiringprocess'], function(){
@@ -111,7 +118,7 @@ Route::group(['middleware' => 'auth:api'], function () {
         });
     });
 
-    // opening
+    // opening routes
     Route::group([ "prefix" => "opening" ], function(){
         // fetch
         Route::group(['prefix'=>'fetch'], function(){
@@ -125,9 +132,10 @@ Route::group(['middleware' => 'auth:api'], function () {
         });
         
         Route::post('create', 'OpeningController@create');
+        Route::patch('update', 'OpeningController@update');
     });
 
-    // application
+    // application routes
     Route::group(['prefix' => 'application'], function(){
         // create
         Route::group(['prefix' => 'create'], function(){
